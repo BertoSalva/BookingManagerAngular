@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+// @import 'assets/layout/styles/theme/md-dark-indigo/theme.css' !important;
+
+$gutter: 1rem; //for primeflex grid system
+@import 'assets/layout/styles/layout/layout.scss';
+/* PrimeNG */
+@import 'primeng/resources/primeng.min.css';
+@import 'primeng/resources/themes/bootstrap4-light-purple/theme.css';
+@import 'primeflex/primeflex.scss';
+@import 'primeicons/primeicons.css';
+@import 'bootstrap/dist/css/bootstrap.css';
+
+/* Demos */
+@import 'assets/demo/styles/flags/flags.css';
+@import 'assets/demo/styles/badges.scss';
+@import 'assets/demo/styles/code.scss';
+
+@import 'ngx-toastr/toastr';
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+@import 'ngx-toastr/toastr-bs5-alert';
+
+/* Custom CSS */
+
+.br-0 {
+  border-radius: 0px !important;
+}
+
+.w-50rem {
+  width: 50rem !important;
+}
+
+a:link {
+  text-decoration: none !important;
+}
+a:visited {
+  text-decoration: none !important;
+}
+a:hover {
+  text-decoration: none !important;
+}
+a:active {
+  text-decoration: none !important;
+}
+
+.layout-sidebar {
+  left: 0 !important;
+  top: 5rem !important;
+  border-radius: 0 !important;
+  background-color: rgb(12 89 12) !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.layout-wrapper.layout-static .layout-main-container {
+  margin-left: 280px !important;
+}
+
+.layout-menu {
+  background-color: #0c590ceb !important;
+}
+
+.layout-menu li ul li a.active-route {
+  font-weight: 600;
+  background-color: aliceblue !important;
+  .layout-menuitem-text,
+  .layout-menuitem-icon {
+    color: #0c590ceb !important;
+  }
+}
+
+.layout-menu ul a:hover {
+  background-color: #169217f7 !important;
+}
+
+.layout-topbar {
+  background-color: #0c590ceb !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.layout-topbar-button,
+.layout-topbar-logo {
+  color: aliceblue !important;
+}
+
+.layout-topbar .layout-topbar-button:hover {
+  background-color: #169217f7 !important;
+  color: white !important;
+}
+.layout-menuitem-root-text {
+  color: aliceblue !important;
+  font-size: 1rem !important;
+}
+.layout-menuitem-icon,
+.layout-menuitem-text {
+  color: aliceblue !important;
+}

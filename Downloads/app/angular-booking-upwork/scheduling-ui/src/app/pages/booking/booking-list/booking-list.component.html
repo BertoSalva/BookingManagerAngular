@@ -1,0 +1,101 @@
+<div class="grid">
+  <div class="col-12">
+    <div class="card">
+      <h3>Bookings</h3>
+      <p-table
+        #dt1
+        [value]="tableData"
+        dataKey="id"
+        [rows]="10"
+        [loading]="loading"
+        [rowHover]="true"
+        styleClass="p-datatable-gridlines"
+        [paginator]="true"
+        [globalFilterFields]="['requestID', 'parent.parentName', 'child.childName', 'status']"
+        responsiveLayout="stack"
+        [tableStyle]="{ 'min-width': '30rem' }"
+        selectionMode="single"
+        [(selection)]="selectedItem"
+        (onRowSelect)="onRowSelect($event)"
+        sortMode="multiple"
+      >
+        <ng-template pTemplate="caption">
+          <div class="flex justify-content-between flex-column sm:flex-row">
+            <button
+              pButton
+              label="Clear"
+              class="p-button-outlined mb-2"
+              icon="pi pi-filter-slash"
+              (click)="clear(dt1)"
+            ></button>
+            <span class="p-input-icon-left mb-2">
+              <i class="pi pi-search"></i>
+              <input
+                pInputText
+                type="text"
+                #filter
+                (input)="onGlobalFilter(dt1, $event)"
+                placeholder="Search Keyword"
+                class="w-full"
+              />
+            </span>
+          </div>
+        </ng-template>
+        <!-- <ng-template pTemplate="caption">
+     <div class="flex justify-content-between flex-column sm:flex-row">
+      <button
+       pButton
+       label="Clear"
+       class="p-button-outlined mb-2"
+       icon="pi pi-filter-slash"
+       (click)="clear(dt1)"
+      ></button>
+      <span class="p-input-icon-left mb-2">
+       <i class="pi pi-search"></i>
+       <input
+        pInputText
+        type="text"
+        #filter
+        (input)="onGlobalFilter(dt1, $event)"
+        placeholder="Search Keyword"
+        class="w-full"
+       />
+      </span>
+     </div>
+    </ng-template> -->
+        <ng-template pTemplate="header">
+          <tr>
+            <th pSortableColumn="requestID">
+              Request ID <p-sortIcon field="requestID"></p-sortIcon>
+            </th>
+            <th pSortableColumn="psychologistName">
+              Psychologist <p-sortIcon field="psychologistName"></p-sortIcon>
+            </th>
+            <th pSortableColumn="parentName">
+              Parent <p-sortIcon field="parentName"></p-sortIcon>
+            </th>
+            <th pSortableColumn="childName">Child <p-sortIcon field="childName"></p-sortIcon></th>
+            <th pSortableColumn="preferredDateTime">
+              Preferred Date & Time <p-sortIcon field="preferredDateTime"></p-sortIcon>
+            </th>
+            <th pSortableColumn="requestDate">
+              Request On <p-sortIcon field="requestDate"></p-sortIcon>
+            </th>
+            <th>Status</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
+          <tr [pSelectableRow]="item" [pSelectableRowIndex]="rowIndex">
+            <td>{{ item.requestID }}</td>
+            <td>{{ item.psychologist.psychologistName }}</td>
+            <td>{{ item.parent.parentName }}</td>
+            <td>{{ item.child.childName }}</td>
+            <td>{{ item.preferredDateTime | date : 'medium' }}</td>
+            <td>{{ item.requestDate | date : 'medium' }}</td>
+            <td>{{ item.status }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

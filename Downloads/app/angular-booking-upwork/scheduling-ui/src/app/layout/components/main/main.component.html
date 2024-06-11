@@ -1,0 +1,15 @@
+<div class="layout-wrapper" [ngClass]="containerClass">
+  <layout-navbar></layout-navbar>
+  <div class="layout-sidebar">
+    <layout-sidebar></layout-sidebar>
+  </div>
+  <div class="layout-main-container">
+    <div class="layout-main">
+      <p-toast key="controls-toast" position="top-right"></p-toast>
+      <router-outlet></router-outlet>
+    </div>
+    <layout-footer></layout-footer>
+  </div>
+  <!-- <utility-layout-app-config></utility-layout-app-config> -->
+  <div class="layout-mask"></div>
+</div>
